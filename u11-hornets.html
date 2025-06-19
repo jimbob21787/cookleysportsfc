@@ -19,24 +19,65 @@
     header {
       background-color: #0033cc;
       color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
     }
 
-    .club-logo {
+    header img {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
       height: 100px;
-      width: auto;
-      flex-shrink: 0;
-    }
-
-    .header-text {
-      margin-left: 1.5rem;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      background-color: #0033cc;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #0033cc;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
     .content {
@@ -56,6 +97,20 @@
       padding: 1rem;
     }
 
+    .social-icons {
+      margin-top: 0.5rem;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 0.5rem;
+    }
+
+    .social-icons img {
+      height: 24px;
+      width: 24px;
+    }
+
     ul {
       padding-left: 1.2rem;
     }
@@ -63,14 +118,27 @@
 </head>
 <body>
   <header>
-    <img src="clubbadgetransparent.png" alt="Club Logo" class="club-logo">
-    <div class="header-text">
-      <h1>Cookley Sports FC - U11 Hornets</h1>
-    </div>
+    <img src="clubbadgetransparent.png" alt="Club Logo">
+    <h1>Cookley Sports FC - U11 Hornets</h1>
   </header>
 
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About Us</a>
+    <div class="dropdown">
+      <a href="#">Teams</a>
+      <div class="dropdown-content">
+        <a href="u10-villa.html">U10 Villa</a>
+        <a href="u11-hornets.html">U11 Hornets</a>
+      </div>
+    </div>
+    <a href="index.html#fixtures">Fixtures</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="https://cookleysportsfc.mgsportswear.co.uk/" target="_blank" rel="noopener noreferrer">Club Shop</a>
+  </nav>
+
   <div class="content">
-    <h2>About the U11 Hornets Team</h2>
+    <h2>About the U11 Hornets</h2>
     <p>The U11 Hornets are a competitive and passionate group of young footballers. With a strong focus on skill-building, teamwork, and respect, they proudly represent Cookley Sports FC in their age category.</p>
 
     <h3>Coaches</h3>
@@ -81,8 +149,8 @@
 
     <h3>Upcoming Fixtures</h3>
     <ul>
-      <li>Sunday 23rd June - vs Team X</li>
-      <li>Sunday 30th June - vs Team Y</li>
+      <li>Sunday 23rd June – vs Team X</li>
+      <li>Sunday 30th June – vs Team Y</li>
     </ul>
 
     <h3>Gallery</h3>
@@ -91,6 +159,11 @@
 
   <footer>
     <p>&copy; 2025 Cookley Sports Football Club. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/CookleySportsFootballClub/" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+      </a>
+    </div>
   </footer>
 </body>
 </html>
