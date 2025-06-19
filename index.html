@@ -23,8 +23,6 @@
 
     .club-logo {
       height: 120px;
-      width: auto;
-      flex-shrink: 0;
     }
 
     .header-text {
@@ -56,9 +54,7 @@
       font-weight: bold;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+    nav a:hover { text-decoration: underline; }
 
     /* Dropdown Styles */
     .dropdown {
@@ -80,22 +76,17 @@
       padding: 0.5rem 1rem;
       text-decoration: none;
       display: block;
-      font-weight: normal;
     }
 
-    .dropdown-content a:hover {
-      background-color: #002299;
-    }
+    .dropdown-content a:hover { background-color: #002299; }
 
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+    .dropdown:hover .dropdown-content { display: block; }
 
     .content {
       max-width: 800px;
       margin: 2rem auto;
       padding: 1rem;
-      background-color: rgba(255, 255, 255, 0.95);
+      background: rgba(255,255,255,0.95);
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
@@ -110,23 +101,10 @@
       align-items: center;
     }
 
-    .footer-left {
-      max-width: 300px;
-      flex: 1 1 300px;
-    }
-
-    .footer-center {
-      flex: 1 1 100%;
-      text-align: center;
-      margin-top: 1rem;
-    }
-
+    .footer-left { flex: 1 1 300px; text-align: left; }
+    .footer-center { flex: 1 1 100%; text-align: center; margin-top: 1rem; }
     .footer-right {
-      text-align: right;
-      flex: 1 1 200px;
-    }
-
-    .footer-social {
+      flex: 1 1 auto;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -144,18 +122,14 @@
       transition: filter 0.3s ease;
     }
 
-    .footer-social a:hover img {
-      filter: none;
-    }
+    .footer-social a:hover img { filter: none; }
 
     address a {
       color: #aad4ff;
       text-decoration: underline;
     }
 
-    address a:hover {
-      color: #ffffff;
-    }
+    address a:hover { color: #ffffff; }
   </style>
 </head>
 <body>
@@ -170,7 +144,6 @@
   <nav>
     <a href="#">Home</a>
     <a href="#about">About Us</a>
-
     <div class="dropdown">
       <a href="#teams" class="dropbtn">Teams</a>
       <div class="dropdown-content">
@@ -178,7 +151,6 @@
         <a href="u11-hornets.html">U11 Hornets</a>
       </div>
     </div>
-
     <a href="#fixtures">Fixtures</a>
     <a href="#contact">Contact</a>
     <a href="https://cookleysportsfc.mgsportswear.co.uk/" target="_blank" rel="noopener noreferrer">Club Shop</a>
@@ -186,19 +158,19 @@
 
   <div class="content">
     <h2>Welcome to Cookley Sports FC</h2>
-    <p>We are a passionate grassroots football club based in Cookley, providing football opportunities for all ages and abilities. Whether you're a young aspiring star or just love the beautiful game, Cookley Sports FC is the place to play, grow, and thrive.</p>
+    <p>We are a passionate grassroots football club based in Cookley...</p>
 
     <h3 id="about">About Us</h3>
-    <p>Cookley Sports Football Club has been a part of the community for decades, offering football to players of all levels. With dedicated coaches and volunteers, we focus on development, teamwork, and fun.</p>
+    <p>Cookley Sports Football Club has been a part of the community...</p>
 
     <h3 id="teams">Our Teams</h3>
-    <p>We have junior and senior teams competing in local leagues. Come down and support us on match day!</p>
+    <p>We have junior and senior teams...</p>
 
     <h3 id="fixtures">Fixtures</h3>
-    <p>Stay tuned for the latest fixtures and results. We update our page regularly with new matches and events.</p>
+    <p>Stay tuned...</p>
 
     <h3 id="contact">Contact</h3>
-    <p>Email us at <a href="mailto:info@cookleysportsfc.com">info@cookleysportsfc.com</a> or follow us on social media for the latest updates.</p>
+    <p>Email us at <a href="mailto:info@cookleysportsfc.com">info@cookleysportsfc.com</a>.</p>
   </div>
 
   <footer>
@@ -208,8 +180,10 @@
         Lea Ln,<br />
         Cookley,<br />
         Kidderminster<br />
-        DY10 3RH<br />
-        <a href="https://www.google.com/maps/place/COOKLEY+VILLAGE+HALL+%26+SPORTS+CLUB" target="_blank" rel="noopener noreferrer">View on Google Maps</a>
+        DY10 3RH<br />
+        <a href="https://www.google.com/maps/place/COOKLEY+VILLAGE+HALL+%26+SPORTS+CLUB" target="_blank" rel="noopener noreferrer">
+          View on Google Maps
+        </a>
       </address>
     </div>
 
@@ -217,7 +191,7 @@
       <div class="footer-social">
         <span>Connect with us on social media</span>
         <a href="https://www.facebook.com/CookleySportsFootballClub/" target="_blank" rel="noopener noreferrer">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo_2023.png" alt="Facebook" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Facebook_logo_black_and_white.svg" alt="Facebook" />
         </a>
       </div>
     </div>
