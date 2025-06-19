@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cookley Sports Football Club</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -19,7 +19,6 @@
       padding: 1rem 2rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
       position: relative;
     }
 
@@ -31,7 +30,6 @@
 
     .header-text {
       margin-left: 1.5rem;
-      flex-grow: 1;
     }
 
     header h1 {
@@ -44,16 +42,17 @@
       font-weight: 400;
     }
 
+    /* Facebook icon in header top right */
     .header-social {
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
     }
 
     .header-social a img {
-      height: 32px;
-      width: 32px;
-      filter: brightness(0) invert(1); /* make icon white */
+      height: 30px;
+      width: 30px;
+      filter: brightness(0) invert(1);
       transition: filter 0.3s ease;
     }
 
@@ -133,30 +132,23 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
     }
 
     .footer-left {
       max-width: 300px;
       text-align: left;
+      flex: 1 1 300px;
     }
 
-    .footer-left address {
-      font-style: normal;
-      line-height: 1.4;
-    }
-
-    .footer-left a {
-      color: #cce0ff;
-      text-decoration: underline;
+    .footer-center {
+      text-align: center;
+      flex: 1 1 300px;
     }
 
     .footer-right {
-      text-align: center;
-      flex-grow: 1;
-    }
-
-    .social-icons {
-      margin-top: 0.5rem;
+      text-align: right;
+      flex: 1 1 100px;
     }
 
     .social-icons a img {
@@ -169,11 +161,20 @@
     .social-icons a img:hover {
       filter: brightness(0.7) invert(1);
     }
+
+    address a {
+      color: #aad4ff;
+      text-decoration: underline;
+    }
+
+    address a:hover {
+      color: #ffffff;
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="clubbadgetransparent.png" alt="Cookley Sports FC Crest" class="club-logo">
+    <img src="clubbadgetransparent.png" alt="Cookley Sports FC Crest" class="club-logo" />
     <div class="header-text">
       <h1>Cookley Sports Football Club</h1>
       <p>Grassroots football at its finest</p>
@@ -222,16 +223,18 @@
   <footer>
     <div class="footer-left">
       <address>
-        <strong>Cookley Village Hall & Sports Club</strong><br>
-        Lea Ln,<br>
-        Cookley,<br>
-        Kidderminster<br>
-        DY10 3RH<br>
+        <strong>Cookley Village Hall &amp; Sports Club</strong><br />
+        Lea Ln,<br />
+        Cookley,<br />
+        Kidderminster<br />
+        DY10 3RH<br />
         <a href="https://www.google.com/maps/place/COOKLEY+VILLAGE+HALL+%26+SPORTS+CLUB/@52.4180067,-2.2377931,17z/data=!3m2!4b1!5s0x48708c2c3a943fb9:0x6b1d27eb175d4cc6!4m6!3m5!1s0x48708c2c86974283:0x551afaa39205e32a!8m2!3d52.4180035!4d-2.2352182!16s%2Fg%2F1vp6zmfm?entry=ttu&g_ep=EgoyMDI1MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">View on Google Maps</a>
       </address>
     </div>
-    <div class="footer-right">
+    <div class="footer-center">
       <p>&copy; 2025 Cookley Sports Football Club. All rights reserved.</p>
+    </div>
+    <div class="footer-right">
       <div class="social-icons">
         <a href="https://www.facebook.com/CookleySportsFootballClub/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
