@@ -12,6 +12,7 @@
       background: url('clubhouse.jpg') no-repeat center center fixed;
       background-size: cover;
     }
+
     header {
       background-color: #0033cc;
       color: white;
@@ -19,22 +20,27 @@
       display: flex;
       align-items: center;
     }
+
     .club-logo {
       height: 120px;
       width: auto;
       flex-shrink: 0;
     }
+
     .header-text {
       margin-left: 1.5rem;
     }
+
     header h1 {
       margin: 0;
       font-size: 2.5rem;
     }
+
     header p {
       margin: 0.25rem 0 0;
       font-weight: 400;
     }
+
     nav {
       background-color: #0033cc;
       display: flex;
@@ -42,18 +48,53 @@
       padding: 0.5rem;
       flex-wrap: wrap;
     }
+
     nav a {
       color: white;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
+    /* Dropdown Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #0033cc;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      display: block;
+      font-weight: normal;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #002299;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
     .hero {
       display: none;
     }
+
     .content {
       max-width: 800px;
       margin: 2rem auto;
@@ -62,6 +103,7 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
     footer {
       background-color: #0033cc;
       color: white;
@@ -70,13 +112,16 @@
       margin-top: 2rem;
       position: relative;
     }
+
     .social-icons {
       margin-top: 0.5rem;
     }
+
     .social-icons a {
       display: inline-block;
       margin: 0 0.5rem;
     }
+
     .social-icons img {
       height: 24px;
       width: 24px;
@@ -91,26 +136,41 @@
       <p>Grassroots football at its finest</p>
     </div>
   </header>
+
   <nav>
     <a href="#">Home</a>
     <a href="#about">About Us</a>
-    <a href="#teams">Teams</a>
+
+    <div class="dropdown">
+      <a href="#teams" class="dropbtn">Teams</a>
+      <div class="dropdown-content">
+        <a href="u10-villa.html">U10 Villa</a>
+        <a href="u11-hornets.html">U11 Hornets</a>
+      </div>
+    </div>
+
     <a href="#fixtures">Fixtures</a>
     <a href="#contact">Contact</a>
     <a href="https://cookleysportsfc.mgsportswear.co.uk/" target="_blank" rel="noopener noreferrer">Club Shop</a>
   </nav>
+
   <div class="content">
     <h2>Welcome to Cookley Sports FC</h2>
     <p>We are a passionate grassroots football club based in Cookley, providing football opportunities for all ages and abilities. Whether you're a young aspiring star or just love the beautiful game, Cookley Sports FC is the place to play, grow, and thrive.</p>
+
     <h3 id="about">About Us</h3>
     <p>Cookley Sports Football Club has been a part of the community for decades, offering football to players of all levels. With dedicated coaches and volunteers, we focus on development, teamwork, and fun.</p>
+
     <h3 id="teams">Our Teams</h3>
     <p>We have junior and senior teams competing in local leagues. Come down and support us on match day!</p>
+
     <h3 id="fixtures">Fixtures</h3>
     <p>Stay tuned for the latest fixtures and results. We update our page regularly with new matches and events.</p>
+
     <h3 id="contact">Contact</h3>
     <p>Email us at <a href="mailto:info@cookleysportsfc.com">info@cookleysportsfc.com</a> or follow us on social media for the latest updates.</p>
   </div>
+
   <footer>
     <p>&copy; 2025 Cookley Sports Football Club. All rights reserved.</p>
     <div class="social-icons">
