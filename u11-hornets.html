@@ -33,7 +33,7 @@
 
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
 
     header p {
@@ -61,7 +61,7 @@
     }
 
     .content {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
       padding: 1rem;
       background-color: rgba(255, 255, 255, 0.95);
@@ -69,28 +69,26 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    .content img {
-      max-width: 100%;
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .team-photo img {
+      width: 100%;
       border-radius: 10px;
-      margin-bottom: 1rem;
     }
 
     .sponsors {
-      margin-top: 2rem;
-    }
-
-    .sponsor-logos {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
       flex-wrap: wrap;
-      margin-top: 1rem;
+      justify-content: center;
+      gap: 2rem;
     }
 
-    .sponsor-logos img {
-      max-height: 80px;
-      width: auto;
+    .sponsors a img {
+      max-width: 200px;
+      height: auto;
+      object-fit: contain;
     }
 
     footer {
@@ -101,21 +99,22 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+      text-align: center;
+    }
+
+    .footer-address,
+    .footer-center,
+    .footer-social {
+      flex: 1 1 100%;
+      margin: 0.5rem 0;
     }
 
     .footer-address {
-      font-size: 0.9rem;
-      max-width: 300px;
+      text-align: left;
     }
 
     .footer-center {
-      text-align: center;
-      flex: 1;
       font-size: 0.85rem;
-    }
-
-    .footer-social {
-      text-align: right;
     }
 
     .footer-social h4 {
@@ -127,10 +126,30 @@
       width: 24px;
       vertical-align: middle;
     }
+
+    @media (min-width: 600px) {
+      .footer-address,
+      .footer-center,
+      .footer-social {
+        flex: 1;
+        margin: 0;
+      }
+
+      .footer-address {
+        text-align: left;
+      }
+
+      .footer-center {
+        text-align: center;
+      }
+
+      .footer-social {
+        text-align: right;
+      }
+    }
   </style>
 </head>
 <body>
-
   <header>
     <img src="clubbadgetransparent.png" alt="Cookley Sports FC Crest" class="club-logo">
     <div class="header-text">
@@ -149,35 +168,29 @@
   </nav>
 
   <div class="content">
-    <h2>U11 Hornets</h2>
-
-    <!-- Team Photo Section -->
-    <section>
-      <h3>Team Photo</h3>
-      <img src="u11-team-photo.jpg" alt="U11 Hornets Team Photo">
+    <section class="section team-photo">
+      <h2>Team Photo</h2>
+      <img src="u11-teamphoto.jpg" alt="U11 Hornets Team Photo" />
     </section>
 
-    <!-- About Us Section -->
-    <section>
-      <h3>About Us</h3>
-      <p>The U11 Hornets are a spirited and dedicated group of young players who bring energy, passion, and teamwork to every game. Our team focuses on player development, respect, and having fun while learning the beautiful game.</p>
+    <section class="section">
+      <h2>About U11 Hornets</h2>
+      <p>The U11 Hornets are a fun and committed youth football team, passionate about teamwork, sportsmanship, and improving together. We welcome young players who want to enjoy the game while developing their skills in a supportive and exciting environment.</p>
     </section>
 
-    <!-- Training Times Section -->
-    <section>
-      <h3>Training Times</h3>
-      <p>We train every Tuesday and Thursday evening from 6:00 PM to 7:30 PM at Cookley Village Hall & Sports Club.</p>
+    <section class="section">
+      <h2>Training Times</h2>
+      <p>Training takes place every Wednesday from 6:00 PM to 7:30 PM at Cookley Village Playing Fields. Be sure to bring boots, shin pads, and water!</p>
     </section>
 
-    <!-- Sponsors Section -->
-    <section class="sponsors">
-      <h3>Our Sponsors</h3>
-      <div class="sponsor-logos">
-        <a href="https://kblelectrical.co.uk/" target="_blank">
-          <img src="KBL_highres-1024x376.png" alt="KBL Electrical">
+    <section class="section">
+      <h2>Our Sponsors</h2>
+      <div class="sponsors">
+        <a href="https://kblelectrical.co.uk/" target="_blank" rel="noopener noreferrer">
+          <img src="KBL_highres-1024x376.png" alt="KBL Electrical Sponsor Logo">
         </a>
-        <a href="https://www.dreamcatchercampers.co.uk/" target="_blank">
-          <img src="dreamcatcherlogo-129x57.png" alt="Dreamcatcher Campers">
+        <a href="https://www.dreamcatchercampers.co.uk/" target="_blank" rel="noopener noreferrer">
+          <img src="dreamcatcherlogo-129x57.png" alt="Dreamcatcher Campers Sponsor Logo">
         </a>
       </div>
     </section>
@@ -199,11 +212,10 @@
 
     <div class="footer-social">
       <h4>Connect with us on social media</h4>
-      <a href="https://www.facebook.com/CookleySportsFootballClub/" target="_blank">
-        <img src="Facebook_Logo_Secondary.png" alt="Facebook">
+      <a href="https://www.facebook.com/CookleySportsFootballClub/" target="_blank" rel="noopener noreferrer">
+        <img src="Facebook_Logo_Secondary.png" alt="Facebook Logo">
       </a>
     </div>
   </footer>
-
 </body>
 </html>
