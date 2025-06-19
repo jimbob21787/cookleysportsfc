@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>U11 Hornets - Cookley Sports Football Club</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cookley Sports FC - U11 Hornets</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -60,31 +60,6 @@
       text-decoration: underline;
     }
 
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #0033cc;
-      min-width: 160px;
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      color: white;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      display: block;
-      font-weight: normal;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
     .content {
       max-width: 800px;
       margin: 2rem auto;
@@ -94,87 +69,68 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    .team-photo img {
-      width: 100%;
+    .content img {
+      max-width: 100%;
       border-radius: 10px;
       margin-bottom: 1rem;
     }
 
-    .team-sponsors {
+    .sponsors {
       margin-top: 2rem;
-      text-align: center;
     }
 
     .sponsor-logos {
-      margin-top: 1rem;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
+      align-items: center;
       gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
     }
 
     .sponsor-logos img {
-      height: 80px;
-      max-width: 160px;
-      object-fit: contain;
-      filter: drop-shadow(0 0 5px rgba(0,0,0,0.1));
-      transition: transform 0.2s;
-    }
-
-    .sponsor-logos img:hover {
-      transform: scale(1.05);
+      max-height: 80px;
+      width: auto;
     }
 
     footer {
       background-color: #0033cc;
       color: white;
+      padding: 1rem 2rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      align-items: flex-start;
-      padding: 2rem;
+      align-items: center;
     }
 
-    .footer-left {
-      flex: 1;
-      min-width: 200px;
+    .footer-address {
+      font-size: 0.9rem;
+      max-width: 300px;
     }
 
     .footer-center {
-      flex: 1;
       text-align: center;
-      min-width: 200px;
-      margin-top: 1rem;
-    }
-
-    .footer-right {
       flex: 1;
+      font-size: 0.85rem;
+    }
+
+    .footer-social {
       text-align: right;
-      min-width: 200px;
     }
 
-    .social-icons img {
-      height: 32px;
-      width: 32px;
+    .footer-social h4 {
+      margin: 0 0 0.5rem;
     }
 
-    @media (max-width: 768px) {
-      footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .footer-left,
-      .footer-center,
-      .footer-right {
-        margin-top: 1rem;
-        text-align: center;
-      }
+    .footer-social a img {
+      height: 24px;
+      width: 24px;
+      vertical-align: middle;
     }
   </style>
 </head>
 <body>
+
   <header>
     <img src="clubbadgetransparent.png" alt="Cookley Sports FC Crest" class="club-logo">
     <div class="header-text">
@@ -186,314 +142,68 @@
   <nav>
     <a href="index.html">Home</a>
     <a href="index.html#about">About Us</a>
-    <div class="dropdown">
-      <a href="#" class="dropbtn">Teams</a>
-      <div class="dropdown-content">
-        <a href="u10-villa.html">U10 Villa</a>
-        <a href="u11-hornets.html">U11 Hornets</a>
-      </div>
-    </div>
+    <a href="index.html#teams">Teams</a>
     <a href="index.html#fixtures">Fixtures</a>
     <a href="index.html#contact">Contact</a>
     <a href="https://cookleysportsfc.mgsportswear.co.uk/" target="_blank" rel="noopener noreferrer">Club Shop</a>
   </nav>
 
   <div class="content">
-    <section class="team-photo">
-      <h2>Team Photo</h2>
+    <h2>U11 Hornets</h2>
+
+    <!-- Team Photo Section -->
+    <section>
+      <h3>Team Photo</h3>
       <img src="u11-team-photo.jpg" alt="U11 Hornets Team Photo">
     </section>
 
-    <section class="about">
-      <h2>About Us</h2>
-      <p>The U11 Hornets are a passionate and developing team within Cookley Sports FC. We focus on building confidence, skills, and sportsmanship among young players in a supportive and fun environment.</p>
+    <!-- About Us Section -->
+    <section>
+      <h3>About Us</h3>
+      <p>The U11 Hornets are a spirited and dedicated group of young players who bring energy, passion, and teamwork to every game. Our team focuses on player development, respect, and having fun while learning the beautiful game.</p>
     </section>
 
-    <section class="training">
-      <h2>Training Times</h2>
-      <p>We train every Wednesday and Friday evening at Cookley Village Hall & Sports Club from 6:00 PM to 7:30 PM. All new players are welcome!</p>
+    <!-- Training Times Section -->
+    <section>
+      <h3>Training Times</h3>
+      <p>We train every Tuesday and Thursday evening from 6:00 PM to 7:30 PM at Cookley Village Hall & Sports Club.</p>
     </section>
 
-    <section class="team-sponsors">
-      <h2>Our Team Sponsors</h2>
-      <p>We are proudly supported by local businesses that believe in youth football.</p>
+    <!-- Sponsors Section -->
+    <section class="sponsors">
+      <h3>Our Sponsors</h3>
       <div class="sponsor-logos">
         <a href="https://kblelectrical.co.uk/" target="_blank">
-          <img src="KBL_highres-1024x376.png" alt="Sponsor 1">
+          <img src="KBL_highres-1024x376.png" alt="KBL Electrical">
         </a>
-        <a href="https://sponsor2.com" target="_blank">
-          <img src="sponsor2-logo.png" alt="Sponsor 2">
+        <a href="https://www.dreamcatchercampers.co.uk/" target="_blank">
+          <img src="dreamcatcherlogo-129x57.png" alt="Dreamcatcher Campers">
         </a>
       </div>
     </section>
   </div>
 
   <footer>
-    <div class="footer-left">
-      <h4>Our Address</h4>
-      <p>
-        Cookley Village Hall & Sports Club<br>
-        Lea Ln,<br>
-        Cookley,<br>
-        Kidderminster<br>
-        DY10 3RH<br>
-        <a href="https://www.google.com/maps/place/Cookley+Village+Hall+%26+Sports+Club/@52.409729,-2.242499" target="_blank" style="color: white; text-decoration: underline;">View on Google Maps</a>
-      </p>
+    <div class="footer-address">
+      <strong>Cookley Village Hall & Sports Club</strong><br>
+      Lea Ln,<br>
+      Cookley,<br>
+      Kidderminster<br>
+      DY10 3RH<br>
+      <a href="https://www.google.com/maps?q=Cookley+Village+Hall+%26+Sports+Club,+DY10+3RH" target="_blank" style="color: white; text-decoration: underline;">View on Google Maps</a>
     </div>
 
     <div class="footer-center">
-      <p>&copy; 2025 Cookley Sports Football Club. All rights reserved.</p>
+      &copy; 2025 Cookley Sports Football Club. All rights reserved.
     </div>
 
-    <div class="footer-right">
+    <div class="footer-social">
       <h4>Connect with us on social media</h4>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/CookleySportsFootballClub/" target="_blank">
-          <img src="Facebook_Logo_Secondary.png" alt="Facebook" />
-        </a>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cookley Sports FC - U11 Hornets</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: url('clubhouse.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
-
-    header {
-      background-color: #0033cc;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-    }
-
-    .club-logo {
-      height: 120px;
-      flex-shrink: 0;
-    }
-
-    .header-text {
-      margin-left: 1.5rem;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-
-    header p {
-      margin: 0.25rem 0 0;
-      font-weight: 400;
-    }
-
-    nav {
-      background-color: #0033cc;
-      display: flex;
-      justify-content: center;
-      padding: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #0033cc;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      color: white;
-      padding: 0.5rem 1rem;
-      display: block;
-      text-decoration: none;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .content {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background-color: rgba(255, 255, 255, 0.95);
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .team-photo {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .team-photo img {
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
-    }
-
-    footer {
-      background-color: #0033cc;
-      color: white;
-      padding: 2rem 2rem 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    .footer-left {
-      flex: 1 1 250px;
-    }
-
-    .footer-left address {
-      font-style: normal;
-      line-height: 1.6;
-    }
-
-    .footer-left a {
-      color: #aad4ff;
-      text-decoration: underline;
-    }
-
-    .footer-left a:hover {
-      color: #ffffff;
-    }
-
-    .footer-right {
-      flex: 1 1 250px;
-      text-align: right;
-    }
-
-    .footer-right span {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-right img {
-      height: 32px;
-      width: auto;
-    }
-
-    .footer-center {
-      flex: 1 1 100%;
-      text-align: center;
-      margin-top: 1.5rem;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .footer-right, .footer-left {
-        text-align: center;
-        margin-top: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="clubbadgetransparent.png" alt="Cookley Sports FC Crest" class="club-logo" />
-    <div class="header-text">
-      <h1>Cookley Sports Football Club</h1>
-      <p>U11 Hornets</p>
-    </div>
-  </header>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="index.html#about">About Us</a>
-    <div class="dropdown">
-      <a href="#" class="dropbtn">Teams</a>
-      <div class="dropdown-content">
-        <a href="u10-villa.html">U10 Villa</a>
-        <a href="u11-hornets.html">U11 Hornets</a>
-      </div>
-    </div>
-    <a href="index.html#fixtures">Fixtures</a>
-    <a href="index.html#contact">Contact</a>
-    <a href="https://cookleysportsfc.mgsportswear.co.uk/" target="_blank">Club Shop</a>
-  </nav>
-
-  <div class="content">
-    <section class="team-photo">
-      <h2>Team Photo</h2>
-      <img src="u11-hornets-team.jpg" alt="U11 Hornets Team Photo" />
-    </section>
-
-    <section class="about-us">
-      <h2>About the U11 Hornets</h2>
-      <p>The U11 Hornets are a passionate and energetic team committed to developing their skills, teamwork, and love for football. Coached by experienced volunteers, our focus is on player growth, enjoyment, and building confidence both on and off the pitch.</p>
-    </section>
-
-    <section class="training-times">
-      <h2>Training Times</h2>
-      <p>We train every Wednesday and Saturday:</p>
-      <ul>
-        <li>Wednesdays: 6:00pm – 7:15pm at Cookley Village Hall Pitches</li>
-        <li>Saturdays: 10:00am – 11:15am at Cookley School Fields</li>
-      </ul>
-    </section>
-  </div>
-
-  <footer>
-    <div class="footer-left">
-      <address>
-        <strong>Cookley Village Hall &amp; Sports Club</strong><br />
-        Lea Ln,<br />
-        Cookley,<br />
-        Kidderminster<br />
-        DY10 3RH<br />
-        <a href="https://www.google.com/maps/place/COOKLEY+VILLAGE+HALL+%26+SPORTS+CLUB" target="_blank" rel="noopener noreferrer">View on Google Maps</a>
-      </address>
-    </div>
-
-    <div class="footer-right">
-      <span>Connect with us on social media</span>
       <a href="https://www.facebook.com/CookleySportsFootballClub/" target="_blank">
-        <img src="Facebook_Logo_Secondary.png" alt="Facebook Logo" />
+        <img src="Facebook_Logo_Secondary.png" alt="Facebook">
       </a>
     </div>
-
-    <div class="footer-center">
-      <p>&copy; 2025 Cookley Sports Football Club. All rights reserved.</p>
-    </div>
   </footer>
+
 </body>
 </html>
