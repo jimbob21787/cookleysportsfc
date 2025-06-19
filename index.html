@@ -100,42 +100,27 @@
     footer {
       background-color: #0033cc;
       color: white;
-      padding: 2rem 2rem 1rem;
+      padding: 2rem;
     }
 
-    .footer-logos {
+    .footer-row {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 1rem;
-    }
-
-    .footer-logos a img {
-      height: 60px;
-      width: auto;
-      transition: transform 0.2s ease;
-    }
-
-    .footer-logos a img:hover {
-      transform: scale(1.1);
-    }
-
-    .footer-columns {
-      display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-start;
+      flex-wrap: wrap;
     }
 
     .footer-left,
+    .footer-center,
     .footer-right {
       flex: 1 1 250px;
+      box-sizing: border-box;
     }
 
     .footer-left address {
       font-style: normal;
       line-height: 1.6;
+      margin: 0;
     }
 
     .footer-left a {
@@ -145,6 +130,25 @@
 
     .footer-left a:hover {
       color: #ffffff;
+    }
+
+    .footer-center {
+      text-align: center;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .footer-center a img {
+      height: 60px;
+      width: auto;
+      transition: transform 0.2s ease;
+    }
+
+    .footer-center a img:hover {
+      transform: scale(1.1);
     }
 
     .footer-right {
@@ -165,24 +169,30 @@
     .footer-bottom {
       text-align: center;
       font-size: 0.9rem;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
-    @media (max-width: 600px) {
-      .footer-columns {
+    @media (max-width: 768px) {
+      .footer-row {
         flex-direction: column;
         align-items: center;
         text-align: center;
       }
 
-      .footer-right, .footer-left {
+      .footer-left,
+      .footer-right,
+      .footer-center {
         text-align: center;
+        margin: 1rem 0;
+      }
+
+      .footer-right span {
         margin-top: 1rem;
       }
 
-      .footer-logos {
-        flex-direction: column;
-        gap: 10px;
+      .footer-center {
+        flex-direction: row;
+        flex-wrap: wrap;
       }
     }
   </style>
@@ -199,7 +209,6 @@
   <nav>
     <a href="#">Home</a>
     <a href="#about">About Us</a>
-
     <div class="dropdown">
       <a href="#teams" class="dropbtn">Teams</a>
       <div class="dropdown-content">
@@ -207,7 +216,6 @@
         <a href="u11-hornets.html">U11 Hornets</a>
       </div>
     </div>
-
     <a href="#fixtures">Fixtures</a>
     <a href="#contact">Contact</a>
     <a href="https://cookleysportsfc.mgsportswear.co.uk/" target="_blank" rel="noopener noreferrer">Club Shop</a>
@@ -231,16 +239,7 @@
   </div>
 
   <footer>
-    <div class="footer-logos">
-      <a href="https://partner1.example.com" target="_blank" rel="noopener noreferrer">
-        <img src="worcesterfalogo.png" alt="Worcester FA Logo" />
-      </a>
-      <a href="https://partner2.example.com" target="_blank" rel="noopener noreferrer">
-        <img src="2staraccred.png" alt="FA Accreditation Logo" />
-      </a>
-    </div>
-
-    <div class="footer-columns">
+    <div class="footer-row">
       <div class="footer-left">
         <address>
           <strong>Cookley Village Hall &amp; Sports Club</strong><br>
@@ -252,6 +251,15 @@
             View on Google Maps
           </a>
         </address>
+      </div>
+
+      <div class="footer-center">
+        <a href="https://partner1.example.com" target="_blank" rel="noopener noreferrer">
+          <img src="worcesterfalogo.png" alt="Worcester FA Logo" />
+        </a>
+        <a href="https://partner2.example.com" target="_blank" rel="noopener noreferrer">
+          <img src="2staraccred.png" alt="FA Accreditation Logo" />
+        </a>
       </div>
 
       <div class="footer-right">
