@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cookley Sports FC - U11 Hornets</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookley Sports Football Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -23,7 +23,6 @@
 
     .club-logo {
       height: 120px;
-      width: auto;
       flex-shrink: 0;
     }
 
@@ -33,7 +32,7 @@
 
     header h1 {
       margin: 0;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
     }
 
     header p {
@@ -60,54 +59,43 @@
       text-decoration: underline;
     }
 
+    /* Dropdown Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #0033cc;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #002299;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
     .content {
-      max-width: 900px;
+      max-width: 800px;
       margin: 2rem auto;
       padding: 1rem;
       background-color: rgba(255, 255, 255, 0.95);
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .section {
-      margin-bottom: 2rem;
-    }
-
-    .team-photo img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .sponsors {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    .sponsors a img {
-      max-width: 200px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .league-logo {
-      display: block;
-      margin: 0 auto 1rem;
-      max-width: 200px;
-      height: auto;
-    }
-
-    .league-section a {
-      display: block;
-      text-align: center;
-      font-weight: bold;
-      color: #0033cc;
-      text-decoration: underline;
-    }
-
-    .league-section a:hover {
-      text-decoration: none;
     }
 
     footer {
@@ -180,54 +168,42 @@
     <img src="clubbadgetransparent.png" alt="Cookley Sports FC Crest" class="club-logo">
     <div class="header-text">
       <h1>Cookley Sports Football Club</h1>
-      <p>U11 Hornets</p>
+      <p>Grassroots football at its finest</p>
     </div>
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="index.html#about">About Us</a>
-    <a href="index.html#teams">Teams</a>
-    <a href="index.html#fixtures">Fixtures</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="#">Home</a>
+    <a href="#about">About Us</a>
+
+    <div class="dropdown">
+      <a href="#teams" class="dropbtn">Teams</a>
+      <div class="dropdown-content">
+        <a href="u10-villa.html">U10 Villa</a>
+        <a href="u11-hornets.html">U11 Hornets</a>
+      </div>
+    </div>
+
+    <a href="#fixtures">Fixtures</a>
+    <a href="#contact">Contact</a>
     <a href="https://cookleysportsfc.mgsportswear.co.uk/" target="_blank" rel="noopener noreferrer">Club Shop</a>
   </nav>
 
   <div class="content">
-    <section class="section team-photo">
-      <h2>Team Photo</h2>
-      <img src="u11-teamphoto.jpg" alt="U11 Hornets Team Photo" />
-    </section>
+    <h2>Welcome to Cookley Sports FC</h2>
+    <p>We are a passionate grassroots football club based in Cookley, providing football opportunities for all ages and abilities. Whether you're a young aspiring star or just love the beautiful game, Cookley Sports FC is the place to play, grow, and thrive.</p>
 
-    <section class="section">
-      <h2>About U11 Hornets</h2>
-      <p>The U11 Hornets are a fun and committed youth football team, passionate about teamwork, sportsmanship, and improving together. We welcome young players who want to enjoy the game while developing their skills in a supportive and exciting environment.</p>
-    </section>
+    <h3 id="about">About Us</h3>
+    <p>Cookley Sports Football Club has been a part of the community for decades, offering football to players of all levels. With dedicated coaches and volunteers, we focus on development, teamwork, and fun.</p>
 
-    <section class="section">
-      <h2>Training Times</h2>
-      <p>Training takes place every Wednesday from 6:00 PM to 7:30 PM at Cookley Village Playing Fields. Be sure to bring boots, shin pads, and water!</p>
-    </section>
+    <h3 id="teams">Our Teams</h3>
+    <p>We have junior and senior teams competing in local leagues. Come down and support us on match day!</p>
 
-    <section class="section">
-      <h2>Our Sponsors</h2>
-      <div class="sponsors">
-        <a href="https://kblelectrical.co.uk/" target="_blank" rel="noopener noreferrer">
-          <img src="KBL_highres-1024x376.png" alt="KBL Electrical Sponsor Logo">
-        </a>
-        <a href="https://www.dreamcatchercampers.co.uk/" target="_blank" rel="noopener noreferrer">
-          <img src="dreamcatcherlogo-129x57.png" alt="Dreamcatcher Campers Sponsor Logo">
-        </a>
-      </div>
-    </section>
+    <h3 id="fixtures">Fixtures</h3>
+    <p>Stay tuned for the latest fixtures and results. We update our page regularly with new matches and events.</p>
 
-    <section class="section league-section">
-      <h2>League</h2>
-      <img src="mercianlogo.png" alt="Mercian Junior Football League Logo" class="league-logo" />
-      <a href="https://fulltime.thefa.com/index.html;jsessionid=4957377B362D436A6767A05877ADB114?selectedSeason=858361714&selectedFixtureGroupAgeGroup=0&selectedDivision=191111708&selectedCompetition=0" target="_blank" rel="noopener noreferrer">
-        View Fixtures & Results on FA Full-Time
-      </a>
-    </section>
+    <h3 id="contact">Contact</h3>
+    <p>Email us at <a href="mailto:info@cookleysportsfc.com">info@cookleysportsfc.com</a> or follow us on social media for the latest updates.</p>
   </div>
 
   <footer>
