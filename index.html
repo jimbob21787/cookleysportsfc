@@ -149,6 +149,21 @@
       font-size: 0.9rem;
     }
 
+    .footer-logos {
+      margin-top: 1rem;
+    }
+
+    .footer-logos a img {
+      height: 40px;
+      margin: 0 10px;
+      vertical-align: middle;
+      transition: transform 0.2s;
+    }
+
+    .footer-logos a img:hover {
+      transform: scale(1.1);
+    }
+
     @media (max-width: 600px) {
       footer {
         flex-direction: column;
@@ -229,6 +244,14 @@
 
     <div class="footer-center">
       <p>&copy; 2025 Cookley Sports Football Club. All rights reserved.</p>
+      <div class="footer-logos">
+        <a href="https://partner1.example.com" target="_blank" rel="noopener noreferrer">
+          <img src="worcesterfalogo.png" alt="Worcester FA Logo" />
+        </a>
+        <a href="https://partner2.example.com" target="_blank" rel="noopener noreferrer">
+          <img src="2staraccred.png" alt="fa accreditation Logo" />
+        </a>
+      </div>
     </div>
   </footer>
 </body>
