@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cookley Sports FC - U11 Hornets</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -154,6 +154,20 @@
         margin-top: 1rem;
       }
     }
+
+    .watermark {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-30deg);
+      font-size: 4rem;
+      color: rgba(0, 0, 0, 0.1);
+      font-weight: 700;
+      z-index: 999;
+      pointer-events: none;
+      white-space: nowrap;
+      user-select: none;
+    }
   </style>
 </head>
 <body>
@@ -228,5 +242,7 @@
       <p>&copy; 2025 Cookley Sports Football Club. All rights reserved.</p>
     </div>
   </footer>
+
+  <div class="watermark">UNDER CONSTRUCTION</div>
 </body>
 </html>
