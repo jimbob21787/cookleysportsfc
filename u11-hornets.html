@@ -91,6 +91,25 @@
       object-fit: contain;
     }
 
+    .league-logo {
+      display: block;
+      margin: 0 auto 1rem;
+      max-width: 200px;
+      height: auto;
+    }
+
+    .league-section a {
+      display: block;
+      text-align: center;
+      font-weight: bold;
+      color: #0033cc;
+      text-decoration: underline;
+    }
+
+    .league-section a:hover {
+      text-decoration: none;
+    }
+
     footer {
       background-color: #0033cc;
       color: white;
@@ -154,20 +173,6 @@
         margin-top: 1rem;
       }
     }
-
-    .watermark {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-30deg);
-      font-size: 4rem;
-      color: rgba(0, 0, 0, 0.1);
-      font-weight: 700;
-      z-index: 999;
-      pointer-events: none;
-      white-space: nowrap;
-      user-select: none;
-    }
   </style>
 </head>
 <body>
@@ -215,6 +220,14 @@
         </a>
       </div>
     </section>
+
+    <section class="section league-section">
+      <h2>League</h2>
+      <img src="mercianlogo.png" alt="Mercian Junior League Logo" class="league-logo" />
+      <a href="https://fulltime.thefa.com/index.html;jsessionid=4957377B362D436A6767A05877ADB114?selectedSeason=858361714&selectedFixtureGroupAgeGroup=0&selectedDivision=191111708&selectedCompetition=0" target="_blank" rel="noopener noreferrer">
+        View Fixtures & Results on FA Full-Time
+      </a>
+    </section>
   </div>
 
   <footer>
@@ -242,7 +255,5 @@
       <p>&copy; 2025 Cookley Sports Football Club. All rights reserved.</p>
     </div>
   </footer>
-
-  <div class="watermark">UNDER CONSTRUCTION</div>
 </body>
 </html>
