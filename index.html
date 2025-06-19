@@ -19,6 +19,8 @@
       padding: 1rem 2rem;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      position: relative;
     }
 
     .club-logo {
@@ -29,6 +31,7 @@
 
     .header-text {
       margin-left: 1.5rem;
+      flex-grow: 1;
     }
 
     header h1 {
@@ -39,6 +42,23 @@
     header p {
       margin: 0.25rem 0 0;
       font-weight: 400;
+    }
+
+    .header-social {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-social a img {
+      height: 32px;
+      width: 32px;
+      filter: brightness(0) invert(1); /* make icon white */
+      transition: filter 0.3s ease;
+    }
+
+    .header-social a img:hover {
+      filter: brightness(0.7) invert(1);
     }
 
     nav {
@@ -107,24 +127,47 @@
     footer {
       background-color: #0033cc;
       color: white;
-      text-align: center;
-      padding: 1rem;
+      padding: 1rem 2rem;
       margin-top: 2rem;
-      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left {
+      max-width: 300px;
+      text-align: left;
+    }
+
+    .footer-left address {
+      font-style: normal;
+      line-height: 1.4;
+    }
+
+    .footer-left a {
+      color: #cce0ff;
+      text-decoration: underline;
+    }
+
+    .footer-right {
+      text-align: center;
+      flex-grow: 1;
     }
 
     .social-icons {
       margin-top: 0.5rem;
     }
 
-    .social-icons a {
-      display: inline-block;
-      margin: 0 0.5rem;
-    }
-
-    .social-icons img {
+    .social-icons a img {
       height: 24px;
       width: 24px;
+      filter: brightness(0) invert(1);
+      transition: filter 0.3s ease;
+    }
+
+    .social-icons a img:hover {
+      filter: brightness(0.7) invert(1);
     }
   </style>
 </head>
@@ -134,6 +177,11 @@
     <div class="header-text">
       <h1>Cookley Sports Football Club</h1>
       <p>Grassroots football at its finest</p>
+    </div>
+    <div class="header-social">
+      <a href="https://www.facebook.com/CookleySportsFootballClub/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+      </a>
     </div>
   </header>
 
@@ -172,11 +220,23 @@
   </div>
 
   <footer>
-    <p>&copy; 2025 Cookley Sports Football Club. All rights reserved.</p>
-    <div class="social-icons">
-      <a href="https://www.facebook.com/CookleySportsFootballClub/" target="_blank" rel="noopener noreferrer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
-      </a>
+    <div class="footer-left">
+      <address>
+        <strong>Cookley Village Hall & Sports Club</strong><br>
+        Lea Ln,<br>
+        Cookley,<br>
+        Kidderminster<br>
+        DY10 3RH<br>
+        <a href="https://www.google.com/maps/place/COOKLEY+VILLAGE+HALL+%26+SPORTS+CLUB/@52.4180067,-2.2377931,17z/data=!3m2!4b1!5s0x48708c2c3a943fb9:0x6b1d27eb175d4cc6!4m6!3m5!1s0x48708c2c86974283:0x551afaa39205e32a!8m2!3d52.4180035!4d-2.2352182!16s%2Fg%2F1vp6zmfm?entry=ttu&g_ep=EgoyMDI1MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">View on Google Maps</a>
+      </address>
+    </div>
+    <div class="footer-right">
+      <p>&copy; 2025 Cookley Sports Football Club. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/CookleySportsFootballClub/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+        </a>
+      </div>
     </div>
   </footer>
 </body>
