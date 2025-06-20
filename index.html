@@ -100,7 +100,7 @@
     footer {
       background-color: #0033cc;
       color: white;
-      padding: 2rem;
+      padding: 1.2rem 1.5rem;
     }
 
     .footer-row {
@@ -115,6 +115,9 @@
     .footer-right {
       flex: 1 1 250px;
       box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
 
     .footer-left address {
@@ -133,16 +136,14 @@
     }
 
     .footer-center {
+      align-items: center;
       text-align: center;
-      padding: 0 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 20px;
+      gap: 15px;
+      padding-top: 0;
     }
 
     .footer-center a img {
-      height: 60px;
+      height: 80px;
       width: auto;
       transition: transform 0.2s ease;
     }
@@ -153,10 +154,10 @@
 
     .footer-right {
       text-align: right;
+      align-items: flex-end;
     }
 
     .footer-right span {
-      display: block;
       font-weight: bold;
       margin-bottom: 0.5rem;
     }
@@ -183,6 +184,7 @@
       .footer-right,
       .footer-center {
         text-align: center;
+        align-items: center;
         margin: 1rem 0;
       }
 
@@ -193,6 +195,7 @@
       .footer-center {
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
       }
     }
   </style>
