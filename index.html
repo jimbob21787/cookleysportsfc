@@ -1,258 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cookley Sports Football Club</title>
-  <meta name="description" content="Cookley Sports Football Club – grassroots football in Cookley. Teams for all ages, local leagues, fixtures, and community football development." />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cookley Sports Football Club</title>
+<meta name="description" content="Cookley Sports Football Club – grassroots football in Cookley." />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  /* Base body with desktop background */
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url('clubhouse.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
 
-    header {
-      background-color: #2c7fcf;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
+  /* Overlay to keep content readable */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: -1;
+  }
 
-    .club-logo {
-      height: 120px;
-      flex-shrink: 0;
-    }
+  header {
+    background-color: transparent;
+    color: #2c7fcf;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
 
-    .header-text {
-      margin-left: 1.5rem;
-    }
+  .club-logo {
+    height: 120px;
+    flex-shrink: 0;
+  }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
+  .header-text {
+    margin-left: 1.5rem;
+  }
 
-    header p {
-      margin: 0.25rem 0 0;
-      font-weight: 400;
-    }
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #2c7fcf;
+  }
 
-    nav {
-      background-color: #2c7fcf;
-      display: flex;
-      justify-content: center;
-      padding: 0.5rem;
-      flex-wrap: wrap;
-      flex-shrink: 0;
-    }
+  header p {
+    margin: 0.25rem 0 0;
+    font-weight: 400;
+    color: #2c7fcf;
+  }
 
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
+  nav {
+    background-color: #2c7fcf;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+  }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+  nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+  }
 
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
+  nav a:hover {
+    text-decoration: underline;
+  }
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #2c7fcf;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
 
-    .dropdown-content a {
-      color: white;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      display: block;
-    }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2c7fcf;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
 
-    .dropdown-content a:hover {
-      background-color: #1e5ea3;
-    }
+  .dropdown-content a {
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: block;
+  }
 
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+  .dropdown-content a:hover {
+    background-color: #1e5ea3;
+  }
 
-    /* Banner image between header and main */
-    .banner-image {
-      width: 100%;
-      height: 300px;
-      background: url('clubhouse.jpg') no-repeat center center;
-      background-size: cover;
-      flex-shrink: 0;
-    }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
-    /* Layout wrapper for content + sidebar */
+  /* Mobile banner (hidden on desktop) */
+  .mobile-banner {
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Page body and sidebar layout */
+  .page-body {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    gap: 2rem;
+    flex-grow: 1;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    background: rgba(255,255,255,0.95);
+    border-radius: 10px;
+  }
+
+  main.content {
+    padding: 1rem;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 800px;
+  }
+
+  aside.sidebar {
+    width: 340px;
+    flex-shrink: 0;
+  }
+
+  footer {
+    background-color: #2c7fcf;
+    color: white;
+    padding: 1.2rem 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
+
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 1rem;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    flex: 1 1 250px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .footer-left address {
+    font-style: normal;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .footer-left a {
+    color: #aad4ff;
+    text-decoration: underline;
+  }
+
+  .footer-left a:hover {
+    color: #ffffff;
+  }
+
+  .footer-center {
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    padding-top: 0;
+  }
+
+  .footer-center a img {
+    height: 80px;
+    width: auto;
+    transition: transform 0.2s ease;
+  }
+
+  .footer-center a img:hover {
+    transform: scale(1.1);
+  }
+
+  .footer-right {
+    text-align: right;
+    align-items: flex-end;
+  }
+
+  .footer-right span {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-right img {
+    height: 32px;
+    width: auto;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 1024px) {
     .page-body {
-      display: flex;
-      max-width: 1200px;
-      margin: 2rem auto;
-      gap: 2rem;
-      flex-grow: 1;
-      padding: 0 1rem;
-      box-sizing: border-box;
-    }
-
-    main.content {
-      background-color: rgba(255, 255, 255, 0.95);
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      padding: 1rem;
-      flex: 1 1 0;
-      min-width: 0; /* Fix flex overflow */
-      max-width: 800px;
-    }
-
-    /* Facebook sidebar */
-    aside.sidebar {
-      width: 340px;
-      flex-shrink: 0;
-    }
-
-    footer {
-      background-color: #2c7fcf;
-      color: white;
-      padding: 1.2rem 1.5rem;
-      flex-shrink: 0;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: 0 auto;
-      box-sizing: border-box;
-      padding: 0 1rem;
-    }
-
-    .footer-left,
-    .footer-center,
-    .footer-right {
-      flex: 1 1 250px;
-      box-sizing: border-box;
-      display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      margin: 1rem auto;
     }
-
-    .footer-left address {
-      font-style: normal;
-      line-height: 1.6;
-      margin: 0;
+    aside.sidebar {
+      width: 100%;
+      margin-bottom: 2rem;
     }
-
-    .footer-left a {
-      color: #aad4ff;
-      text-decoration: underline;
+    main.content {
+      max-width: 100%;
     }
-
-    .footer-left a:hover {
-      color: #ffffff;
+    .footer-row {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      padding: 0 1rem;
     }
-
-    .footer-center {
+    .footer-left, .footer-center, .footer-right {
       align-items: center;
       text-align: center;
-      gap: 15px;
-      padding-top: 0;
+      margin: 1rem 0;
     }
-
-    .footer-center a img {
-      height: 80px;
-      width: auto;
-      transition: transform 0.2s ease;
-    }
-
-    .footer-center a img:hover {
-      transform: scale(1.1);
-    }
-
-    .footer-right {
-      text-align: right;
-      align-items: flex-end;
-    }
-
     .footer-right span {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
+  }
 
-    .footer-right img {
-      height: 32px;
-      width: auto;
+  /* Mobile banner shows only on small screens */
+  @media (max-width: 768px) {
+    body {
+      background: none;
     }
-
-    .footer-bottom {
-      text-align: center;
-      font-size: 0.9rem;
-      margin-top: 1.5rem;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0 1rem;
-      box-sizing: border-box;
+    body::before {
+      background: none;
     }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .page-body {
-        flex-direction: column;
-        margin: 1rem auto;
-      }
-      aside.sidebar {
-        width: 100%;
-        margin-bottom: 2rem;
-      }
-      main.content {
-        max-width: 100%;
-      }
-      .footer-row {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        padding: 0 1rem;
-      }
-      .footer-left, .footer-center, .footer-right {
-        align-items: center;
-        text-align: center;
-        margin: 1rem 0;
-      }
-      .footer-right span {
-        margin-bottom: 1rem;
-      }
+    .mobile-banner {
+      display: block;
+      margin-bottom: 1rem;
+      height: auto;
     }
-
-    /* Mobile banner for very small screens */
-    @media (max-width: 768px) {
-      .banner-image {
-        height: 180px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <header>
@@ -278,12 +295,11 @@
     <a href="https://cookleysportsfc.mgsportswear.co.uk/" target="_blank" rel="noopener noreferrer">Club Shop</a>
   </nav>
 
-  <!-- Banner image between header and main -->
-  <div class="banner-image" role="img" aria-label="Cookley Sports Football Club clubhouse"></div>
+  <!-- Mobile banner image (hidden on desktop) -->
+  <img src="clubhouse.jpg" alt="Cookley Sports Football Club clubhouse" class="mobile-banner" />
 
-  <!-- Page body with main content and Facebook sidebar -->
-  <div class="page-body">
-    <main class="content" role="main">
+  <div class="page-body" role="main">
+    <main class="content">
       <h2>Welcome to Cookley Sports FC</h2>
       <p>We are a passionate grassroots football club based in Cookley, providing football opportunities for all ages and abilities. Whether you're a young aspiring star or just love the beautiful game, Cookley Sports FC is the place to play, grow, and thrive.</p>
 
@@ -300,10 +316,9 @@
       <p>For any enquiries, please <a href="https://www.facebook.com/CookleySportsFootballClub/" target="_blank" rel="noopener noreferrer">message us on our Facebook page</a>.</p>
     </main>
 
-    <!-- Facebook Page Plugin sidebar -->
     <aside class="sidebar" aria-label="Facebook page timeline">
       <div id="fb-root"></div>
-      <script async defer crossorigin="anonymous" 
+      <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v23.0"></script>
       <div class="fb-page"
         data-href="https://www.facebook.com/CookleySportsFootballClub"
