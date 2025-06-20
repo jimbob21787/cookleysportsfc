@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cookley Sports Football Club</title>
   <meta name="description" content="Cookley Sports Football Club – grassroots football in Cookley. Teams for all ages, local leagues, fixtures, and community football development." />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
@@ -41,29 +41,12 @@
       font-weight: 400;
     }
 
-    /* MOBILE BANNER */
-    .mobile-banner {
-      display: none; /* hidden on desktop */
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .mobile-banner img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 0 0 10px 10px;
-      object-fit: cover;
-    }
-
     nav {
       background-color: #2c7fcf;
       display: flex;
       justify-content: center;
       padding: 0.5rem;
       flex-wrap: wrap;
-      position: relative;
-      z-index: 10;
     }
 
     nav a {
@@ -88,7 +71,7 @@
       background-color: #2c7fcf;
       min-width: 160px;
       box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 100;
+      z-index: 1;
     }
 
     .dropdown-content a {
@@ -106,21 +89,44 @@
       display: block;
     }
 
-    .content {
-      max-width: 800px;
+    /* New wrapper for sidebar + main content */
+    .page-wrapper {
+      max-width: 1100px;
       margin: 2rem auto;
+      display: flex;
+      gap: 2rem;
+      padding: 0 1rem;
+      align-items: flex-start;
+    }
+
+    /* Sidebar with FB feed */
+    aside.sidebar {
+      flex: 0 0 360px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
       padding: 1rem;
+      max-height: 650px;
+      overflow-y: auto;
+    }
+
+    /* Main content white box */
+    main.content {
+      flex: 1;
       background-color: rgba(255, 255, 255, 0.95);
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 1.5rem;
     }
 
     footer {
       background-color: #2c7fcf;
       color: white;
       padding: 1.2rem 1.5rem;
-      position: relative;
-      z-index: 10;
+      max-width: 1100px;
+      margin: 2rem auto 1rem;
+      border-radius: 0 0 10px 10px;
+      box-sizing: border-box;
     }
 
     .footer-row {
@@ -193,56 +199,35 @@
       margin-top: 1.5rem;
     }
 
-    /* MOBILE STYLES */
-    @media (max-width: 768px) {
-      body {
-        background: none; /* remove fixed bg on mobile */
-        padding-top: 0;
+    @media (max-width: 1024px) {
+      .page-wrapper {
+        flex-direction: column;
+        max-width: 90%;
       }
 
-      .mobile-banner {
-        display: block;
-        margin-bottom: 1rem;
+      aside.sidebar {
+        max-height: none;
+        flex: none;
+        margin-bottom: 2rem;
       }
+    }
 
+    @media (max-width: 480px) {
       nav {
         flex-direction: column;
-        align-items: center;
-        padding: 1rem 0;
+        gap: 0.5rem;
       }
 
       nav a {
-        margin: 0.5rem 0;
-        font-size: 1.1rem;
-      }
-
-      .footer-row {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .footer-left,
-      .footer-right,
-      .footer-center {
-        text-align: center;
-        align-items: center;
-        margin: 1rem 0;
-      }
-
-      .footer-right span {
-        margin-top: 1rem;
-      }
-
-      .footer-center {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        margin: 0.25rem 0;
       }
     }
   </style>
 </head>
 <body>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v23.0"></script>
+
   <header>
     <img src="clubbadgetransparent.png" alt="Cookley Sports FC Crest" class="club-logo" />
     <div class="header-text">
@@ -250,11 +235,6 @@
       <p>Grassroots football at its finest</p>
     </div>
   </header>
-
-  <!-- Mobile Banner inserted here -->
-  <div class="mobile-banner">
-    <img src="clubhouse.jpg" alt="Cookley Sports Clubhouse" />
-  </div>
 
   <nav>
     <a href="#">Home</a>
@@ -271,22 +251,40 @@
     <a href="https://cookleysportsfc.mgsportswear.co.uk/" target="_blank" rel="noopener noreferrer">Club Shop</a>
   </nav>
 
-  <main class="content">
-    <h2>Welcome to Cookley Sports FC</h2>
-    <p>We are a passionate grassroots football club based in Cookley, providing football opportunities for all ages and abilities. Whether you're a young aspiring star or just love the beautiful game, Cookley Sports FC is the place to play, grow, and thrive.</p>
+  <div class="page-wrapper">
+    <aside class="sidebar" aria-label="Facebook Feed">
+      <div class="fb-page"
+           data-href="https://www.facebook.com/CookleySportsFootballClub"
+           data-tabs="timeline"
+           data-width="340"
+           data-height="600"
+           data-small-header="true"
+           data-adapt-container-width="false"
+           data-hide-cover="false"
+           data-show-facepile="false">
+        <blockquote cite="https://www.facebook.com/CookleySportsFootballClub" class="fb-xfbml-parse-ignore">
+          <a href="https://www.facebook.com/CookleySportsFootballClub">Cookley Sports Football Club</a>
+        </blockquote>
+      </div>
+    </aside>
 
-    <h3 id="about">About Us</h3>
-    <p>Cookley Sports Football Club has been a part of the community for decades, offering football to players of all levels. With dedicated coaches and volunteers, we focus on development, teamwork, and fun.</p>
+    <main class="content">
+      <h2>Welcome to Cookley Sports FC</h2>
+      <p>We are a passionate grassroots football club based in Cookley, providing football opportunities for all ages and abilities. Whether you're a young aspiring star or just love the beautiful game, Cookley Sports FC is the place to play, grow, and thrive.</p>
 
-    <h3 id="teams">Our Teams</h3>
-    <p>We have junior and senior teams competing in local leagues. Come down and support us on match day!</p>
+      <h3 id="about">About Us</h3>
+      <p>Cookley Sports Football Club has been a part of the community for decades, offering football to players of all levels. With dedicated coaches and volunteers, we focus on development, teamwork, and fun.</p>
 
-    <h3 id="fixtures">Fixtures</h3>
-    <p>Stay tuned for the latest fixtures and results. We update our page regularly with new matches and events.</p>
+      <h3 id="teams">Our Teams</h3>
+      <p>We have junior and senior teams competing in local leagues. Come down and support us on match day!</p>
 
-    <h3 id="contact">Contact Us</h3>
-    <p>For any enquiries, please <a href="https://www.facebook.com/CookleySportsFootballClub/" target="_blank" rel="noopener noreferrer">message us on our Facebook page</a>.</p>
-  </main>
+      <h3 id="fixtures">Fixtures</h3>
+      <p>Stay tuned for the latest fixtures and results. We update our page regularly with new matches and events.</p>
+
+      <h3 id="contact">Contact Us</h3>
+      <p>For any enquiries, please <a href="https://www.facebook.com/CookleySportsFootballClub/" target="_blank" rel="noopener noreferrer">message us on our Facebook page</a>.</p>
+    </main>
+  </div>
 
   <footer>
     <div class="footer-row">
