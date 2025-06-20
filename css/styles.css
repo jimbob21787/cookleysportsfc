@@ -1,0 +1,257 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: url('../images/clubhouse.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: -1;
+}
+
+/* Header */
+header {
+  background-color: #2c7fcf;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.club-logo {
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.header-text {
+  margin-left: 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 0.25rem 0 0;
+}
+
+/* Banner */
+.banner-image {
+  display: none;
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* Navigation */
+nav {
+  background-color: #2c7fcf;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+}
+
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2c7fcf;
+  min-width: 160px;
+  z-index: 10;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #1f5ea3;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Content Area */
+.content {
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  gap: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+.main-text {
+  flex: 2;
+  min-width: 300px;
+}
+
+.team-page-layout {
+  display: block;
+}
+
+.facebook-feed {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+}
+
+/* Team-specific sections */
+.section {
+  margin-bottom: 2rem;
+}
+
+.section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+.sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem; /* Ensures spacing before the League section */
+  width: 100%;          /* Forces the section to take full width */
+}
+
+.sponsors img {
+  max-height: 100px;
+  object-fit: contain;
+}
+
+/* Footer */
+footer {
+  background-color: #2c7fcf;
+  color: white;
+  padding: 1.5rem 1rem;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-left address {
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.footer-left a {
+  color: #aad4ff;
+  text-decoration: underline;
+}
+
+.footer-left a:hover {
+  color: #ffffff;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-center img {
+  max-height: 80px;
+  margin: 0 10px;
+  transition: transform 0.2s ease;
+}
+
+.footer-center img:hover {
+  transform: scale(1.05);
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-right span {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.footer-right img {
+  height: 32px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  body {
+    background: none;
+  }
+
+  body::before {
+    display: none;
+  }
+
+  .banner-image {
+    display: block;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .footer-row {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-left, .footer-center, .footer-right {
+    text-align: center;
+  }
+
+  .footer-right {
+    text-align: center;
+  }
+}
