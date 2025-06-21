@@ -11,7 +11,10 @@ body {
 body::before {
   content: "";
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(255, 255, 255, 0.1);
   z-index: -1;
 }
@@ -108,7 +111,7 @@ nav a:hover {
   padding: 2rem;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
 }
 
@@ -145,8 +148,9 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 2rem; /* Ensures spacing before the League section */
-  width: 100%;          /* Forces the section to take full width */
+  margin-bottom: 2rem;
+  /* spacing before League */
+  width: 100%;
 }
 
 .sponsors img {
@@ -158,21 +162,25 @@ nav a:hover {
 footer {
   background-color: #2c7fcf;
   color: white;
-  padding: 1.5rem 1rem;
+  padding: 1rem 2rem 2rem;
+  font-size: 0.9rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-row {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
   gap: 1rem;
 }
 
-.footer-left, .footer-center, .footer-right {
+.footer-left,
+.footer-center,
+.footer-right {
   flex: 1;
-  min-width: 200px;
+  min-width: 220px;
 }
 
 .footer-left address {
@@ -194,8 +202,8 @@ footer {
 }
 
 .footer-center img {
-  max-height: 80px;
-  margin: 0 10px;
+  height: 50px;
+  margin: 0 0.5rem;
   transition: transform 0.2s ease;
 }
 
@@ -213,20 +221,22 @@ footer {
   font-weight: bold;
 }
 
-.footer-right img {
-  height: 32px;
+.footer-right a img {
+  height: 30px;
 }
 
+/* Footer bottom copyright styling */
 .footer-bottom {
   text-align: center;
+  font-size: 0.85rem;
   margin-top: 1rem;
-  font-size: 0.9rem;
+  flex-shrink: 0;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   body {
-    background: none;
+    background: none !important;
   }
 
   body::before {
@@ -235,6 +245,7 @@ footer {
 
   .banner-image {
     display: block;
+    max-height: 150px;
   }
 
   .content {
@@ -247,11 +258,55 @@ footer {
     align-items: center;
   }
 
-  .footer-left, .footer-center, .footer-right {
+  .footer-left,
+  .footer-center,
+  .footer-right {
     text-align: center;
   }
 
   .footer-right {
     text-align: center;
   }
+
+  /* Pan page: stack Meet the Team and Fundraising vertically */
+  .pan-page .side-by-side {
+    display: block !important;
+  }
+
+  .pan-page .side-by-side>div {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Hornets page: League heading left aligned */
+.u11-hornets .section.league h2 {
+  text-align: left !important;
+}
+
+/* Pan page: centralized section */
+.pan-page .centralized-section {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 600px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.pan-page .centralized-section img {
+  display: block;
+  margin: 1rem auto;
+  max-width: 250px;
+}
+
+/* Pan page: side by side layout for desktop */
+.pan-page .side-by-side {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.pan-page .side-by-side>div {
+  flex: 1;
+  min-width: 280px;
 }
