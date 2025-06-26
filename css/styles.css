@@ -1,11 +1,17 @@
 /* Base styles */
+html,
 body {
+  height: 100%;
+  /* NEW */
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background: url('../images/clubhouse.jpg') no-repeat center center fixed;
   background-size: cover;
-  min-height: 100vh;
   position: relative;
+  display: flex;
+  /* NEW */
+  flex-direction: column;
+  /* NEW */
 }
 
 body::before {
@@ -104,6 +110,8 @@ nav a:hover {
 
 /* Content Area */
 .content {
+  flex: 1;
+  /* NEW: allows content to fill available space */
   display: flex;
   max-width: 1200px;
   margin: 2rem auto;
@@ -155,7 +163,6 @@ nav a:hover {
   align-items: center;
   gap: 2rem;
   margin-bottom: 2rem;
-  /* spacing before League */
   width: 100%;
 }
 
@@ -241,8 +248,12 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+
+  html,
   body {
     background: none !important;
+    background-image: none !important;
+    background-color: #ffffff !important;
   }
 
   body::before {
