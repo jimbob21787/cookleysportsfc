@@ -1,37 +1,50 @@
 /* Base styles */
+/* Base styles */
 html,
 body {
   height: 100%;
-  /* NEW */
   margin: 0;
+  padding: 0;
   font-family: 'Montserrat', sans-serif;
-  background: url('../images/clubhouse.jpg') no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
+  background-color: rgb(243, 240, 240);
+}
+
+body {
   display: flex;
-  /* NEW */
   flex-direction: column;
-  /* NEW */
+  min-height: 100vh;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.1);
-  z-index: -1;
+.page-content {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Header */
-header {
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+/* Header Layout */
+.site-header {
   background-color: #2c7fcf;
-  color: white;
   padding: 1rem 2rem;
   display: flex;
+  justify-content: center;
+}
+
+.header-content {
+  display: flex;
   align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .club-logo {
@@ -39,50 +52,59 @@ header {
   flex-shrink: 0;
 }
 
-.header-text {
-  margin-left: 1.5rem;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-
-header p {
-  margin: 0.25rem 0 0;
-}
-
-/* Banner */
-.banner-image {
-  display: none;
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  margin-bottom: 0;
-}
-
 /* Navigation */
-nav {
-  background-color: #2c7fcf;
+.main-nav {
   display: flex;
-  justify-content: center;
+  flex: 1;
   flex-wrap: wrap;
-  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
-nav a {
+.main-nav a {
   color: white;
-  margin: 0 1rem;
   text-decoration: none;
   font-weight: bold;
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.3s ease;
 }
 
+.main-nav a:hover {
+  color: #aad4ff;
+  /* lighter blue on hover */
+}
+
+.main-nav a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Dropdown */
 .dropdown {
   position: relative;
+  display: inline-block;
+}
+
+.dropdown>a {
+  display: inline-block;
+  padding: 0.5rem;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .dropdown-content {
@@ -91,6 +113,8 @@ nav a:hover {
   background-color: #2c7fcf;
   min-width: 160px;
   z-index: 10;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .dropdown-content a {
@@ -108,10 +132,44 @@ nav a:hover {
   display: block;
 }
 
+/* Hero Banner */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  z-index: 2;
+}
+
+.hero-text-overlay h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
 /* Content Area */
 .content {
-  flex: 1;
-  /* NEW: allows content to fill available space */
   display: flex;
   max-width: 1200px;
   margin: 2rem auto;
@@ -119,7 +177,7 @@ nav a:hover {
   padding: 2rem;
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   flex-wrap: wrap;
 }
 
@@ -128,8 +186,21 @@ nav a:hover {
   min-width: 300px;
 }
 
-.team-page-layout {
-  display: block;
+.main-text h2,
+.main-text h3 {
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.main-text a {
+  color: #2c7fcf;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.main-text a:hover {
+  color: #004d99;
+  text-decoration: underline;
 }
 
 .facebook-feed {
@@ -138,48 +209,15 @@ nav a:hover {
   max-width: 400px;
 }
 
-/* Team-specific sections */
-.section {
-  margin-bottom: 2rem;
-}
-
-.section img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1rem auto;
-}
-
-.team-photo img {
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
-}
-
-.sponsors {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  width: 100%;
-}
-
-.sponsors img {
-  max-height: 100px;
-  object-fit: contain;
-}
-
 /* Footer */
 footer {
-  background-color: #2c7fcf;
-  color: white;
-  padding: 1rem 2rem 2rem;
+  background: linear-gradient(to top, #1f5ea3, #2c7fcf);
+  color: #f0f0f0;
+  padding: 2rem;
   font-size: 0.9rem;
-  position: relative;
   display: flex;
   flex-direction: column;
+  border-top: 3px solid #ffffff20;
 }
 
 .footer-row {
@@ -238,31 +276,39 @@ footer {
   height: 30px;
 }
 
-/* Footer bottom copyright styling */
+/* Footer Bottom */
 .footer-bottom {
   text-align: center;
   font-size: 0.85rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   flex-shrink: 0;
 }
 
-/* Responsive Styles */
+/* Responsive Design */
 @media (max-width: 768px) {
-
-  html,
-  body {
-    background: none !important;
-    background-image: none !important;
-    background-color: #ffffff !important;
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 
-  body::before {
-    display: none;
+  .main-nav {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .hero-banner {
+    height: 200px !important;
+    min-height: 150px;
   }
 
   .banner-image {
-    display: block;
-    max-height: 150px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-text-overlay h1 {
+    font-size: 1.5rem;
   }
 
   .content {
@@ -279,51 +325,159 @@ footer {
   .footer-center,
   .footer-right {
     text-align: center;
+    margin-bottom: 2rem;
   }
 
-  .footer-right {
-    text-align: center;
+  .dropdown-content {
+    position: static;
+    display: none;
   }
 
-  /* Pan page: stack Meet the Team and Fundraising vertically */
-  .pan-page .side-by-side {
-    display: block !important;
+  .dropdown:hover .dropdown-content {
+    display: block;
   }
 
-  .pan-page .side-by-side>div {
-    margin-bottom: 1.5rem;
+  /* Sponsors stacked vertically on mobile */
+  .sponsors a {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
   }
 }
 
-/* Hornets page: League heading left aligned */
-.u11-hornets .section.league h2 {
-  text-align: left !important;
+/* --- Additional Styles for Hornets Page --- */
+
+/* Sponsors container: flex layout, max 3 logos per row */
+.sponsors {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 1rem !important;
+  max-width: 1200px;
+  /* Match main content width */
+  width: 100%;
+  /* Take full width of container */
+  margin: 0 auto !important;
+  /* Center horizontally */
+  padding: 1rem 0;
 }
 
-/* Pan page: centralized section */
-.pan-page .centralized-section {
-  text-align: center;
-  margin: 2rem auto;
-  max-width: 600px;
-  font-weight: 500;
-  line-height: 1.4;
+
+.sponsors a {
+  flex: 1 1 30% !important;
+  max-width: 30% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
 }
 
-.pan-page .centralized-section img {
+.sponsors img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+section img[alt="Mercian Junior League Logo"] {
   display: block;
-  margin: 1rem auto;
-  max-width: 250px;
+  margin: 0 auto 1rem auto;
+  width: 300px !important;
+  height: auto !important;
+  max-height: none !important;
+  max-width: none !important;
 }
 
-/* Pan page: side by side layout for desktop */
-.pan-page .side-by-side {
+.team-photo {
+  width: 100%;
+  max-width: 1200px;
+  /* match your content container width */
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Center team photo */
+.team-photo img {
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+  /* sets a sensible max size */
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Coaches section styling */
+.coaches {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
   margin-top: 2rem;
 }
 
-.pan-page .side-by-side>div {
-  flex: 1;
-  min-width: 280px;
+.coach {
+  background: #e6f0fc;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(44, 127, 207, 0.2);
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.coach img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #2c7fcf;
+}
+
+.coach h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-weight: 700;
+  color: #2c7fcf;
+}
+
+.coach p {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .sponsors a {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+
+  .sponsors img {
+    max-width: 70% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 10px auto !important;
+  }
+
+  .coach {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.league-section {
+  flex: 1 1 100%;
+  max-width: 100%;
+  text-align: center;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.league-section h2 {
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+  padding-left: 1rem;
 }

@@ -19,110 +19,112 @@
   <meta property="og:url" content="https://cookleysportsfc.com/" />
   <meta property="og:type" content="website" />
 
-  <!-- Favicon base -->
+  <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="images/">
-
-  <!-- PNG favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-
-  <!-- Apple and Android -->
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
 
-  <!-- Schema.org for local business -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SportsOrganization",
-  "name": "Cookley Sports Football Club",
-  "url": "https://cookleysportsfc.com/",
-  "logo": "https://cookleysportsfc.com/images/clubbadgetransparent.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Lea Ln",
-    "addressLocality": "Cookley",
-    "addressRegion": "Worcestershire",
-    "postalCode": "DY10 3RH",
-    "addressCountry": "UK"
-  },
-  "sameAs": [
-    "https://www.facebook.com/CookleySportsFootballClub/"
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "name": "Cookley Sports Football Club",
+    "url": "https://cookleysportsfc.com/",
+    "logo": "https://cookleysportsfc.com/images/clubbadgetransparent.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Lea Ln",
+      "addressLocality": "Cookley",
+      "addressRegion": "Worcestershire",
+      "postalCode": "DY10 3RH",
+      "addressCountry": "UK"
+    },
+    "sameAs": [
+      "https://www.facebook.com/CookleySportsFootballClub/"
+    ]
+  }
+  </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
 
-  <header>
-    <div class="header-overlay"></div>
-    <img src="images/clubbadgetransparent.png" alt="Cookley Sports FC Badge" class="club-logo" />
-    <div class="header-text">
-      <h1>Cookley Sports Football Club</h1>
-      <p>Grassroots football at its finest</p>
+  <!-- Header with badge and nav -->
+  <header class="site-header">
+    <div class="header-content">
+      <img src="images/clubbadgetransparent.png" alt="Cookley Sports FC Badge" class="club-logo" />
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/#about">About Us</a>
+        <div class="dropdown">
+          <a href="/#teams">Teams</a>
+          <div class="dropdown-content">
+            <a href="/teams/u10/villa/">U10 Villa</a>
+            <a href="/teams/u11/hornets/">U11 Hornets</a>
+          </div>
+        </div>
+        <a href="/pan-disability/">Pan-Disability</a>
+        <a href="/safeguarding/">Safeguarding</a>
+        <a href="/#fixtures">Fixtures</a>
+        <a href="/#contact">Contact</a>
+        <a href="https://cookleysportsfc.mgsportswear.co.uk/" target="_blank" rel="noopener noreferrer">Club Shop</a>
+      </nav>
     </div>
   </header>
 
-  <nav>
-    <a href="/">Home</a>
-    <a href="/#about">About Us</a>
-
-    <div class="dropdown">
-      <a href="/#teams">Teams</a>
-      <div class="dropdown-content">
-        <!-- Updated clean URLs -->
-        <a href="/teams/u10/villa/">U10 Villa</a>
-        <a href="/teams/u11/hornets/">U11 Hornets</a>
+  <div class="page-content">
+    <!-- Hero Banner with overlay text -->
+    <section class="hero-banner">
+      <img src="images/clubhouse.jpg" alt="Clubhouse Banner" class="banner-image" />
+      <div class="hero-text-overlay">
+        <h1>Cookley Sports Football Club</h1>
       </div>
-    </div>
+    </section>
 
-    <!-- More updated clean URLs -->
-    <a href="/pan-disability/">Pan-Disability</a>
-    <a href="/safeguarding/">Safeguarding</a>
+    <!-- Main Content-->
+    <main class="content">
+      <div class="main-text">
+        <h2>Welcome to Cookley Sports Football Club</h2>
+        <p>We are a passionate grassroots football club based in Cookley, offering football opportunities for all ages
+          and
+          abilities. Whether you're just starting out or an experienced player, we're here to help you enjoy the
+          beautiful
+          game.</p>
 
-    <a href="/#fixtures">Fixtures</a>
-    <a href="/#contact">Contact</a>
-    <a href="https://cookleysportsfc.mgsportswear.co.uk/" target="_blank" rel="noopener noreferrer">Club Shop</a>
-  </nav>
+        <h3 id="about">About Us</h3>
+        <p>Cookley Sports Football Club has a proud tradition of football in the community. Our club is run by
+          volunteers,
+          and we focus on development, respect, and fun for players of all ages.</p>
 
-  <img src="images/clubhouse.jpg" alt="Clubhouse Banner" class="banner-image" />
+        <h3 id="teams">Our Teams</h3>
+        <p>We have junior and senior teams playing in local leagues. Check out individual team pages for more info.</p>
+
+        <h3 id="fixtures">Fixtures</h3>
+        <p>Visit us regularly to stay updated on upcoming matches, results, and events.</p>
+
+        <h3 id="contact">Contact Us</h3>
+        <p>Message us directly via our <a href="https://www.facebook.com/CookleySportsFootballClub/"
+            target="_blank">Facebook page</a>.</p>
+      </div>
+
+      <aside class="facebook-feed" aria-label="Facebook feed">
+        <iframe
+          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCookleySportsFootballClub%2F&tabs=timeline&width=360&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+          width="100%" height="700" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+          allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          title="Facebook Page Feed"></iframe>
+      </aside>
+    </main>
+  </div>
 
 
-  <main class="content">
-    <div class="main-text">
-      <h2>Welcome to Cookley Sports FC</h2>
-      <p>We are a passionate grassroots football club based in Cookley, offering football opportunities for all ages and
-        abilities. Whether you're just starting out or an experienced player, we're here to help you enjoy the beautiful
-        game.</p>
 
-      <h3 id="about">About Us</h3>
-      <p>Cookley Sports Football Club has a proud tradition of football in the community. Our club is run by volunteers,
-        and we focus on development, respect, and fun for players of all ages.</p>
-
-      <h3 id="teams">Our Teams</h3>
-      <p>We have junior and senior teams playing in local leagues. Check out individual team pages for more info.</p>
-
-      <h3 id="fixtures">Fixtures</h3>
-      <p>Visit us regularly to stay updated on upcoming matches, results, and events.</p>
-
-      <h3 id="contact">Contact Us</h3>
-      <p>Message us directly via our <a href="https://www.facebook.com/CookleySportsFootballClub/"
-          target="_blank">Facebook page</a>.</p>
-    </div>
-
-    <aside class="facebook-feed" aria-label="Facebook feed">
-      <iframe
-        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCookleySportsFootballClub%2F&tabs=timeline&width=360&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-        width="100%" height="700" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-        allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        title="Facebook Page Feed"></iframe>
-    </aside>
-  </main>
-
+  <!-- Footer -->
   <footer>
     <div class="footer-row">
       <div class="footer-left">
@@ -161,7 +163,6 @@
       &copy; 2025 Cookley Sports Football Club. All rights reserved.
     </div>
   </footer>
-
 
 </body>
 
