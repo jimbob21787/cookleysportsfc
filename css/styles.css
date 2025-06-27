@@ -1078,3 +1078,18 @@ section img[alt="Mercian Junior League Logo"] {
     display: block;
   }
 }
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.dropdown-toggle:hover {
+  color: #aad4ff;
+}
