@@ -58,6 +58,547 @@
   <header class="site-header">
     <div class="header-content">
       <img src="images/clubbadgetransparent.png" alt="Cookley Sports FC Badge" class="club-logo" />
+
+      /* Base styles */
+      /* Base styles */
+      html,
+      body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: rgb(243, 240, 240);
+      }
+
+      body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      }
+
+      .page-content {
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      }
+
+
+      main {
+      flex: 1 0 auto;
+      }
+
+      footer {
+      flex-shrink: 0;
+      }
+
+      /* Header Layout */
+      .site-header {
+      background-color: #2c7fcf;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      }
+
+      .header-content {
+      display: flex;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+      gap: 2rem;
+      flex-wrap: wrap;
+      }
+
+      .club-logo {
+      height: 100px;
+      flex-shrink: 0;
+      }
+
+      /* Navigation */
+      .main-nav {
+      display: flex;
+      flex: 1;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      }
+
+      .main-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      position: relative;
+      transition: color 0.3s ease;
+      }
+
+      .main-nav a::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: center;
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      transition: transform 0.3s ease;
+      }
+
+      .main-nav a:hover {
+      color: #aad4ff;
+      /* lighter blue on hover */
+      }
+
+      .main-nav a:hover::after {
+      transform: translateX(-50%) scaleX(1);
+      }
+
+      /* Dropdown */
+      .dropdown {
+      position: relative;
+      display: inline-block;
+      }
+
+      .dropdown>a {
+      display: inline-block;
+      padding: 0.5rem;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      }
+
+      .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #2c7fcf;
+      min-width: 160px;
+      z-index: 10;
+      border-radius: 6px;
+      overflow: hidden;
+      }
+
+      .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: white;
+      text-decoration: none;
+      }
+
+      .dropdown-content a:hover {
+      background-color: #1f5ea3;
+      }
+
+      .dropdown:hover .dropdown-content {
+      display: block;
+      }
+
+      /* Hero Banner */
+      .hero-banner {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+
+      }
+
+      .banner-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      }
+
+      .hero-text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      z-index: 2;
+      }
+
+      .hero-text-overlay h1 {
+      margin: 0;
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      }
+
+      /* Content Area */
+      .content {
+      display: flex;
+      max-width: 1200px;
+      margin: 2rem auto;
+      gap: 2rem;
+      padding: 2rem;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      flex-wrap: wrap;
+      }
+
+      .main-text {
+      flex: 2;
+      min-width: 300px;
+      }
+
+      .main-text h2,
+      .main-text h3 {
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      }
+
+      .main-text a {
+      color: #2c7fcf;
+      font-weight: 600;
+      text-decoration: none;
+      }
+
+      .main-text a:hover {
+      color: #004d99;
+      text-decoration: underline;
+      }
+
+      .facebook-feed {
+      flex: 1;
+      min-width: 280px;
+      max-width: 400px;
+      }
+
+      /* Footer */
+      footer {
+      background: linear-gradient(to top, #1f5ea3, #2c7fcf);
+      color: #f0f0f0;
+      padding: 2rem;
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      border-top: 3px solid #ffffff20;
+      }
+
+      .footer-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      }
+
+      .footer-left,
+      .footer-center,
+      .footer-right {
+      flex: 1;
+      min-width: 220px;
+      }
+
+      .footer-left address {
+      font-style: normal;
+      line-height: 1.6;
+      }
+
+      .footer-left a {
+      color: #aad4ff;
+      text-decoration: underline;
+      }
+
+      .footer-left a:hover {
+      color: #ffffff;
+      }
+
+      .footer-center {
+      text-align: center;
+      }
+
+      .footer-center img {
+      height: 50px;
+      margin: 0 0.5rem;
+      transition: transform 0.2s ease;
+      }
+
+      .footer-center img:hover {
+      transform: scale(1.05);
+      }
+
+      .footer-right {
+      text-align: right;
+      }
+
+      .footer-right span {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      }
+
+      .footer-right a img {
+      height: 30px;
+      }
+
+      /* Footer Bottom */
+      .footer-bottom {
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 1.5rem;
+      flex-shrink: 0;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+      .header-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      }
+
+      .main-nav {
+      justify-content: center;
+      gap: 0.5rem;
+      }
+
+      .hero-banner {
+      height: 200px !important;
+      min-height: 150px;
+      }
+
+      .banner-image {
+      height: 100%;
+      object-fit: cover;
+      }
+
+      .hero-text-overlay h1 {
+      font-size: 1.5rem;
+      }
+
+      .content {
+      flex-direction: column;
+      }
+
+      .footer-row {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      }
+
+      .footer-left,
+      .footer-center,
+      .footer-right {
+      text-align: center;
+      margin-bottom: 2rem;
+      }
+
+      .dropdown-content {
+      position: static;
+      display: none;
+      }
+
+      .dropdown:hover .dropdown-content {
+      display: block;
+      }
+
+      /* Sponsors stacked vertically on mobile */
+      .sponsors a {
+      flex: 1 1 100% !important;
+      max-width: 100% !important;
+      }
+      }
+
+      /* --- Additional Styles for Hornets Page --- */
+
+      /* Sponsors container: flex layout, max 3 logos per row */
+      .sponsors {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      gap: 1rem !important;
+      max-width: 1200px;
+      /* Match main content width */
+      width: 100%;
+      /* Take full width of container */
+      margin: 0 auto !important;
+      /* Center horizontally */
+      padding: 1rem 0;
+      }
+
+
+      .sponsors a {
+      flex: 1 1 30% !important;
+      max-width: 30% !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      box-sizing: border-box !important;
+      }
+
+      .sponsors img {
+      max-width: 100% !important;
+      height: auto !important;
+      display: block !important;
+      }
+
+      section img[alt="Mercian Junior League Logo"] {
+      display: block;
+      margin: 0 auto 1rem auto;
+      width: 300px !important;
+      height: auto !important;
+      max-height: none !important;
+      max-width: none !important;
+      }
+
+      .team-photo {
+      width: 100%;
+      max-width: 1200px;
+      /* match your content container width */
+      margin: 0 auto;
+      text-align: left;
+      }
+
+      /* Center team photo */
+      .team-photo img {
+      display: block;
+      margin: 0 auto;
+      max-width: 600px;
+      /* sets a sensible max size */
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+
+      /* Coaches section styling */
+      .coaches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+      }
+
+      .coach {
+      background: #e6f0fc;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(44, 127, 207, 0.2);
+      flex: 1 1 250px;
+      max-width: 300px;
+      text-align: center;
+      }
+
+      .coach img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #2c7fcf;
+      }
+
+      .coach h3 {
+      margin: 0.5rem 0 0.25rem;
+      font-weight: 700;
+      color: #2c7fcf;
+      }
+
+      .coach p {
+      font-size: 0.9rem;
+      color: #333;
+      margin: 0;
+      }
+
+      @media (max-width: 768px) {
+      .sponsors a {
+      flex: 1 1 100% !important;
+      max-width: 100% !important;
+      }
+
+      .sponsors img {
+      max-width: 70% !important;
+      height: auto !important;
+      display: block !important;
+      margin: 10px auto !important;
+      }
+
+      .coach {
+      flex: 1 1 100%;
+      max-width: 100%;
+      }
+      }
+
+      .league-section {
+      flex: 1 1 100%;
+      max-width: 100%;
+      text-align: center;
+      width: 100%;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      }
+
+      .league-section h2 {
+      text-align: left;
+      max-width: 1200px;
+      margin: 0 auto 1rem;
+      padding-left: 1rem;
+      }
+
+
+
+
+      /* Hamburger Menu Styles */
+      .menu-toggle {
+      display: none;
+      }
+
+      .menu-icon {
+      display: none;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      text-align: center;
+      width: 100%;
+      padding: 0.5rem 0;
+      }
+
+      /* Mobile Navigation */
+      @media (max-width: 768px) {
+      .main-nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #2c7fcf;
+      padding: 1rem 0;
+      }
+
+      .menu-toggle:checked+.menu-icon+.main-nav {
+      display: flex;
+      }
+
+      .menu-icon {
+      display: block;
+      }
+
+      .main-nav a {
+      padding: 0.75rem 1rem;
+      text-align: center;
+      display: block;
+      }
+
+      .dropdown-content {
+      position: static;
+      }
+
+      .dropdown:hover .dropdown-content {
+      display: none;
+      }
+
+      .dropdown:has(:focus-within) .dropdown-content,
+      .dropdown:focus-within .dropdown-content {
+      display: block;
+      }
+      }
+
       <nav class="main-nav">
         <a href="/">Home</a>
         <a href="/#about">About Us</a>
