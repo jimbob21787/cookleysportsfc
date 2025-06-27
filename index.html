@@ -175,26 +175,34 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.dropdown > a').forEach(link => {
+      const dropdownLinks = document.querySelectorAll('.dropdown > a');
+
+      dropdownLinks.forEach(link => {
         link.addEventListener('click', e => {
           if (window.innerWidth < 768) {
             e.preventDefault();
             const dropdown = link.parentElement;
+
+            // Toggle this dropdown
             dropdown.classList.toggle('open');
           }
         });
       });
 
-      // Optional: close dropdowns when tapping elsewhere
+      // Close dropdown if clicking outside ANY .dropdown
       document.addEventListener('click', e => {
-        if (!e.target.closest('.dropdown')) {
-          document.querySelectorAll('.dropdown.open').forEach(dropdown => {
-            dropdown.classList.remove('open');
-          });
+        if (window.innerWidth < 768) {
+          const clickedInsideDropdown = e.target.closest('.dropdown');
+          if (!clickedInsideDropdown) {
+            document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+          }
         }
       });
     });
   </script>
+
+
+
 
 
 </body>

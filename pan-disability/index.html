@@ -183,19 +183,27 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Toggle dropdowns on mobile
       document.querySelectorAll('.dropdown > a').forEach(link => {
         link.addEventListener('click', e => {
           if (window.innerWidth < 768) {
             e.preventDefault();
             const dropdown = link.parentElement;
+
+            // Close other open dropdowns
+            document.querySelectorAll('.dropdown').forEach(d => {
+              if (d !== dropdown) d.classList.remove('open');
+            });
+
+            // Toggle this one
             dropdown.classList.toggle('open');
           }
         });
       });
 
-      // Optional: close dropdowns when tapping elsewhere
+      // Close dropdown if clicking outside
       document.addEventListener('click', e => {
-        if (!e.target.closest('.dropdown')) {
+        if (window.innerWidth < 768 && !e.target.closest('.dropdown')) {
           document.querySelectorAll('.dropdown.open').forEach(dropdown => {
             dropdown.classList.remove('open');
           });
@@ -203,6 +211,7 @@
       });
     });
   </script>
+
 
 </body>
 
