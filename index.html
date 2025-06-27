@@ -70,7 +70,7 @@
         <a href="/#about">About Us</a>
 
         <div class="dropdown">
-          <a href="/#teams">Teams</a>
+          <a href="#" class="dropdown-toggle">Teams</a>
           <div class="dropdown-content">
             <a href="/teams/u10/villa/">U10 Villa</a>
             <a href="/teams/u11/hornets/">U11 Hornets</a>
@@ -175,35 +175,41 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const dropdownLinks = document.querySelectorAll('.dropdown > a');
+      const dropdowns = document.querySelectorAll('.dropdown');
 
-      dropdownLinks.forEach(link => {
-        link.addEventListener('click', e => {
+      dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+
+        toggle.addEventListener('click', (e) => {
           if (window.innerWidth < 768) {
             e.preventDefault();
-            const dropdown = link.parentElement;
+            e.stopPropagation();
 
-            // Toggle this dropdown
+            // Close all other dropdowns except this one
+            document.querySelectorAll('.dropdown.open').forEach(d => {
+              if (d !== dropdown) {
+                d.classList.remove('open');
+              }
+            });
+
+            // Toggle this dropdown's open class
             dropdown.classList.toggle('open');
           }
         });
       });
 
-      // Close dropdown if clicking outside ANY .dropdown
-      document.addEventListener('click', e => {
+      // Click outside closes dropdowns
+      document.addEventListener('click', (e) => {
         if (window.innerWidth < 768) {
-          const clickedInsideDropdown = e.target.closest('.dropdown');
-          if (!clickedInsideDropdown) {
-            document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
-          }
+          document.querySelectorAll('.dropdown.open').forEach(dropdown => {
+            if (!dropdown.contains(e.target)) {
+              dropdown.classList.remove('open');
+            }
+          });
         }
       });
     });
   </script>
-
-
-
-
 
 </body>
 

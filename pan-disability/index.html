@@ -38,7 +38,7 @@
         <a href="/#about">About Us</a>
 
         <div class="dropdown">
-          <a href="/#teams">Teams</a>
+          <a href="#" class="dropdown-toggle">Teams</a>
           <div class="dropdown-content">
             <a href="/teams/u10/villa/">U10 Villa</a>
             <a href="/teams/u11/hornets/">U11 Hornets</a>
@@ -183,35 +183,41 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Toggle dropdowns on mobile
-      document.querySelectorAll('.dropdown > a').forEach(link => {
-        link.addEventListener('click', e => {
+      const dropdowns = document.querySelectorAll('.dropdown');
+
+      dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+
+        toggle.addEventListener('click', (e) => {
           if (window.innerWidth < 768) {
             e.preventDefault();
-            const dropdown = link.parentElement;
+            e.stopPropagation();
 
-            // Close other open dropdowns
-            document.querySelectorAll('.dropdown').forEach(d => {
-              if (d !== dropdown) d.classList.remove('open');
+            // Close all other dropdowns except this one
+            document.querySelectorAll('.dropdown.open').forEach(d => {
+              if (d !== dropdown) {
+                d.classList.remove('open');
+              }
             });
 
-            // Toggle this one
+            // Toggle this dropdown's open class
             dropdown.classList.toggle('open');
           }
         });
       });
 
-      // Close dropdown if clicking outside
-      document.addEventListener('click', e => {
-        if (window.innerWidth < 768 && !e.target.closest('.dropdown')) {
+      // Click outside closes dropdowns
+      document.addEventListener('click', (e) => {
+        if (window.innerWidth < 768) {
           document.querySelectorAll('.dropdown.open').forEach(dropdown => {
-            dropdown.classList.remove('open');
+            if (!dropdown.contains(e.target)) {
+              dropdown.classList.remove('open');
+            }
           });
         }
       });
     });
   </script>
-
 
 </body>
 
