@@ -306,29 +306,29 @@ footer {
 
 /* Sponsors */
 .sponsors {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;
-  gap: 1rem !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
   max-width: 1200px;
   width: 100%;
-  margin: 0 auto !important;
+  margin: 0 auto;
   padding: 1rem 0;
 }
 
 .sponsors a {
-  flex: 1 1 30% !important;
-  max-width: 30% !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  box-sizing: border-box !important;
+  flex: 1 1 30%;
+  max-width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .sponsors img {
-  max-width: 100% !important;
-  height: auto !important;
-  display: block !important;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Team photo */
@@ -488,6 +488,7 @@ footer {
   .footer-center,
   .footer-right {
     margin-bottom: 2rem;
+    text-align: center;
   }
 
   .sponsors a {
@@ -498,5 +499,36 @@ footer {
   .coach {
     flex: 1 1 100%;
     max-width: 100%;
+  }
+
+  .content {
+    overflow-x: hidden;
+    flex-wrap: wrap;
+  }
+
+  .league-section {
+    flex: none;
+    /* don't flex-grow or shrink */
+    max-width: 100%;
+    /* full width */
+    width: 100%;
+    /* full width */
+    box-sizing: border-box;
+    /* padding included in width */
+    margin: 2rem auto;
+    padding: 1rem;
+    display: block;
+    /* ensure visible */
+    position: static;
+    /* normal flow */
+    overflow: visible;
+    /* ensure nothing is hidden */
+  }
+
+  .league-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
   }
 }
